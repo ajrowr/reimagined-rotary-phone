@@ -21,3 +21,10 @@ function startservice () {
 	printf "\e[2J\e[${COLOR_SCHEME}m\e[H%$(tput cols)s\r\e[H%s \e[2;r\e[0m\n" "port ${DEV_PORT}" ${1}
 	./manage.py runserver 0.0.0.0:$DEV_PORT
 }
+
+export REXEC_HOST="alan@glacier.io.codex.cx"
+## Execute command remotely, helps if you have ssh keys setup
+function rexec () {
+    ssh $REXEC_HOST $@ ;
+}
+

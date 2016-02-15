@@ -1,0 +1,12 @@
+#!/usr/bin/env python
+
+import os
+
+print "Content-Type: text/plain\n"
+#for (k, v) in os.environ.items():
+#    print "{k:25}   {v}".format(k=k, v=v)
+
+mypath = os.path.join(os.environ['DOCUMENT_ROOT'], os.environ['REQUEST_URI'].lstrip('/'))
+for e in os.listdir(mypath):
+    print e
+
